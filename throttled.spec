@@ -2,12 +2,12 @@
 %define debug_package %{nil}
 
 Name:     throttled
-Version:  0.7
+Version:  master
 Release:  1
 Summary:  Workaround for Intel throttling issues in Linux
 License:  MIT
 URL:      https://github.com/erpalma/throttled
-Source0:  https://github.com/erpalma/throttled/archive/v%{version}.tar.gz
+Source0:  https://github.com/erpalma/throttled/archive/%{version}.tar.gz
 Source1:  throttled.service
 
 BuildRequires: python3-devel
@@ -58,6 +58,9 @@ install -D %{SOURCE1} %{buildroot}/%{_unitdir}/%{name}.service
 %attr(644, root, root) %{_unitdir}/%{name}.service
 
 %changelog
+* Wed Oct 28 2020 Tadas Giniotis <giniotis@lt.ibm.com> - master-1
+- Build the code from master & add F33
+
 * Mon Mar 16 2020 Arun Babu Neelicattu <arun.neelicattu@gmail.com> - 0.7-1
 - Upgrade to 0.7
 
